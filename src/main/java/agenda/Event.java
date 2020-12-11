@@ -33,6 +33,11 @@ public class Event {
         this.myDuration = duration;
     }
 
+    @Override
+    public String toString() {
+        return "Event{" + "myTitle=" + myTitle + ", myStart=" + myStart + ", myDuration=" + myDuration + '}';
+    }
+
     /**
      * Tests if an event occurs on a given day
      *
@@ -41,10 +46,17 @@ public class Event {
      */
     public boolean isInDay(LocalDate aDay) {
         // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+    LocalDate d =LocalDate.of(myStart.getYear(),myStart.getMonthValue (), myStart.getDayOfYear());  
+            if (d==aDay){
+                return true;}
+            
+    return false;
+                
     }
+
+    
    
-    /**
+    /*
      * @return the myTitle
      */
     public String getTitle() {
